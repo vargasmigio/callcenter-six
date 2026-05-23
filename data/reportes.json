@@ -1,0 +1,46 @@
+{
+  "impactoGeneral": 74,
+  "resumen": "La implementación del sistema inteligente redujo tiempos críticos, disminuyó errores operativos y aumentó la capacidad de resolución del equipo de atención.",
+  "resultados": [
+    {
+      "indicador": "Tiempo de respuesta",
+      "antes": 10,
+      "despues": 2,
+      "unidad": "s",
+      "impacto": "80% más rápido",
+      "tipo": "reducir"
+    },
+    {
+      "indicador": "Errores de registro",
+      "antes": 12,
+      "despues": 3,
+      "unidad": "%",
+      "impacto": "75% menos errores",
+      "tipo": "reducir"
+    },
+    {
+      "indicador": "Tiempo de atencion",
+      "antes": 8,
+      "despues": 4,
+      "unidad": "min",
+      "impacto": "50% menos tiempo",
+      "tipo": "reducir"
+    },
+    {
+      "indicador": "Satisfacción del cliente",
+      "antes": 68,
+      "despues": 92,
+      "unidad": "%",
+      "impacto": "+24 puntos",
+      "tipo": "aumentar"
+    },
+    {
+      "indicador": "Resolución en primer contacto",
+      "antes": 54,
+      "despues": 83,
+      "unidad": "%",
+      "impacto": "+29 puntos",
+      "tipo": "aumentar"
+    }
+  ]
+}

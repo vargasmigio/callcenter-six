@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CallCenter Six | Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="login-shell">
+    <section class="brand-panel" aria-label="Resumen del sistema">
+      <nav class="login-nav">
+        <div class="brand-mark">
+          <span class="logo-mark" aria-hidden="true">
+            <span class="headset-band"></span>
+            <span class="headset-dot"></span>
+          </span>
+          <div>
+            <strong>CallCenter Six</strong>
+            <small>Atención Inteligente</small>
+          </div>
+        </div>
+        <span class="status-pill">Online</span>
+      </nav>
+
+      <div class="hero-copy">
+        <span class="eyebrow">Universidad Autónoma del Perú · Grupo 6</span>
+        <h1>Gestión inteligente para equipos de atención al cliente.</h1>
+        <p>
+          Supervisa métricas, tickets, agentes y experiencia de usuario desde
+          un entorno diseñado para operaciones reales de call center.
+        </p>
+        <div class="academic-chip">
+          <strong>Curso: Laboratorio Innova Tec</strong>
+          <span>Software académico de evaluación SaaS</span>
+        </div>
+      </div>
+
+      <div class="ops-grid" aria-label="Indicadores operativos">
+        <article>
+          <span>Resolución</span>
+          <strong>92%</strong>
+          <small>+8.4% este mes</small>
+        </article>
+        <article>
+          <span>Tiempo medio</span>
+          <strong>03:18</strong>
+          <small>Objetivo cumplido</small>
+        </article>
+        <article>
+          <span>CSAT</span>
+          <strong>4.8</strong>
+          <small>Alta satisfacción</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="login-panel" aria-label="Inicio de sesión">
+      <div class="login-card">
+        <div class="card-header">
+          <span class="secure-badge">Acceso seguro</span>
+          <h2>Iniciar sesión</h2>
+          <p>Ingresa con tus credenciales corporativas para continuar al panel de control.</p>
+        </div>
+
+        <form id="loginForm" class="login-form" novalidate>
+          <label for="username">Usuario corporativo</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Ingresa tu usuario"
+            autocomplete="username"
+            required
+          >
+
+          <label for="password">Contraseña</label>
+          <div class="password-field">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Ingresa tu contraseña"
+              autocomplete="current-password"
+              minlength="6"
+              required
+            >
+            <button type="button" id="togglePassword" class="password-toggle" aria-label="Mostrar contraseña" aria-pressed="false">
+              <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3l18 18"></path>
+                <path d="M10.7 5.2A10.6 10.6 0 0 1 12 5c6 0 9.5 7 9.5 7a17 17 0 0 1-2.4 3.2"></path>
+                <path d="M6.1 6.6C3.7 8.2 2.5 12 2.5 12s3.5 7 9.5 7c1.4 0 2.7-.4 3.8-1"></path>
+                <path d="M9.9 9.9A3 3 0 0 0 14.1 14.1"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="form-row">
+            <label class="check-option">
+              <input type="checkbox" id="remember">
+              <span>Recordarme</span>
+            </label>
+            <a href="#" aria-label="Recuperar contraseña">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <p id="formMessage" class="form-message" aria-live="polite"></p>
+
+          <button type="submit" class="primary-button">
+            <span>Entrar al dashboard</span>
+          </button>
+        </form>
+      </div>
+      <footer class="login-footer">Desarrollado por Grupo 6 – Universidad Autónoma del Perú</footer>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

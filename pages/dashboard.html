@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | CallCenter Six</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="app-body">
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="app-brand" href="dashboard.html" aria-label="CallCenter Six">
+        <span class="logo-mark small" aria-hidden="true"><span class="headset-band"></span><span class="headset-dot"></span></span>
+        <span>
+          <strong>CallCenter Six</strong>
+          <small>Atención Inteligente</small>
+        </span>
+      </a>
+
+      <nav class="side-nav">
+        <a class="active" href="dashboard.html"><span>DB</span>Dashboard</a>
+        <a href="tickets.html"><span>TK</span>Tickets</a>
+        <a href="simulacion.html"><span>SM</span>Simulación</a>
+        <a href="metricas.html"><span>MT</span>Métricas</a>
+        <a href="reportes.html"><span>RP</span>Reportes</a>
+        <a href="mejoras.html"><span>MJ</span>Mejoras</a>
+      </nav>
+
+      <div class="sidebar-card">
+        <span>Índice de calidad</span>
+        <strong id="qualityScore">--</strong>
+        <small>Evaluación consolidada de atención y resolución.</small>
+      </div>
+      <div class="academic-block">
+        <strong>Universidad Autónoma del Perú</strong>
+        <span>Curso: Laboratorio Innova Tec</span>
+        <span>Grupo 6</span>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div>
+          <span class="page-kicker">Centro de evaluación · CallCenter Six</span>
+          <h1>Dashboard operativo</h1>
+          <p>Monitoreo de tickets, desempeño del equipo y experiencia del cliente en tiempo real.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost-button" type="button" id="refreshDashboard">Actualizar</button>
+          <div class="user-chip">
+            <span>SC</span>
+            <div>
+              <strong id="currentUser">Supervisor</strong>
+              <small>Turno mañana</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="dashboard-tabs" aria-label="Paneles del dashboard">
+        <button class="active" type="button" data-dashboard-tab="tickets">Tickets</button>
+        <button type="button" data-dashboard-tab="rendimiento">Rendimiento</button>
+        <button type="button" data-dashboard-tab="satisfaccion">Satisfacción</button>
+      </nav>
+
+      <section class="kpi-grid" aria-label="Indicadores principales">
+        <article class="kpi-card" data-dashboard-section="tickets">
+          <div class="kpi-top">
+            <span>Tickets hoy</span>
+            <i>Hoy</i>
+          </div>
+          <strong id="ticketsHoy">--</strong>
+          <small id="ticketsHoyTrend">Cargando datos</small>
+        </article>
+
+        <article class="kpi-card" data-dashboard-section="tickets">
+          <div class="kpi-top">
+            <span>En proceso</span>
+            <i>Live</i>
+          </div>
+          <strong id="enProceso">--</strong>
+          <small id="enProcesoTrend">Cargando datos</small>
+        </article>
+
+        <article class="kpi-card" data-dashboard-section="tickets">
+          <div class="kpi-top">
+            <span>Resueltos</span>
+            <i>SLA</i>
+          </div>
+          <strong id="resueltos">--</strong>
+          <small id="resueltosTrend">Cargando datos</small>
+        </article>
+
+        <article class="kpi-card" data-dashboard-section="rendimiento">
+          <div class="kpi-top">
+            <span>Tiempo promedio</span>
+            <i>AHT</i>
+          </div>
+          <strong id="tiempoPromedio">--</strong>
+          <small id="tiempoTrend">Cargando datos</small>
+        </article>
+
+        <article class="kpi-card" data-dashboard-section="satisfaccion">
+          <div class="kpi-top">
+            <span>Satisfacción del cliente</span>
+            <i>CSAT</i>
+          </div>
+          <strong id="satisfaccion">--</strong>
+          <small id="satisfaccionTrend">Cargando datos</small>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel chart-panel" data-dashboard-section="tickets rendimiento">
+          <div class="panel-header">
+            <div>
+              <span>Volumen semanal</span>
+              <h2>Tickets por día</h2>
+            </div>
+            <small id="chartRange">Últimos 7 días</small>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="ticketsChart" width="920" height="360" aria-label="Gráfico de tickets por día"></canvas>
+          </div>
+        </article>
+
+        <article class="panel activity-panel" data-dashboard-section="tickets">
+          <div class="panel-header">
+            <div>
+              <span>Auditoria operativa</span>
+              <h2>Actividad reciente</h2>
+            </div>
+            <small id="activityCount">-- eventos</small>
+          </div>
+          <div class="activity-list" id="activityList"></div>
+        </article>
+
+        <article class="panel insight-panel" data-dashboard-section="rendimiento" hidden>
+          <div class="panel-header">
+            <div>
+              <span>Rendimiento operativo</span>
+              <h2>Lectura ejecutiva</h2>
+            </div>
+            <small>Actualizado</small>
+          </div>
+          <div class="insight-list">
+            <div><strong>Tiempo promedio controlado</strong><span>La atención se mantiene dentro del rango objetivo para operaciones de alta concurrencia.</span></div>
+            <div><strong>SLA estable</strong><span>Los tickets críticos se sostienen con prioridad visual y seguimiento operativo.</span></div>
+            <div><strong>Capacidad óptima</strong><span>El sistema conserva respuesta fluida para el flujo actual del call center.</span></div>
+          </div>
+        </article>
+
+        <article class="panel insight-panel" data-dashboard-section="satisfaccion" hidden>
+          <div class="panel-header">
+            <div>
+              <span>Experiencia del cliente</span>
+              <h2>Satisfacción y calidad</h2>
+            </div>
+            <small>CSAT</small>
+          </div>
+          <div class="satisfaction-score">
+            <strong id="satisfactionVisual">4.8</strong>
+            <span>Calificación promedio del servicio</span>
+          </div>
+          <div class="insight-list compact">
+            <div><strong>Percepción positiva</strong><span>Los usuarios valoran rapidez, claridad y seguimiento de casos.</span></div>
+            <div><strong>Menos fricción</strong><span>La interfaz reduce pasos innecesarios en tareas frecuentes.</span></div>
+          </div>
+        </article>
+      </section>
+      <footer class="app-footer">Desarrollado por Grupo 6 – Universidad Autónoma del Perú</footer>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "puntajeGlobal": 91,
+  "desempeno": {
+    "tiempoAtencion": {
+      "valor": "04:12",
+      "tendencia": "-18s frente a la medición anterior"
+    },
+    "tiempoRespuesta": {
+      "valor": "318 ms",
+      "tendencia": "Dentro del objetivo de 400 ms"
+    },
+    "erroresRegistro": {
+      "valor": "2.1%",
+      "tendencia": "-0.7% luego de ajustes en formulario"
+    }
+  },
+  "usabilidad": {
+    "satisfaccionCliente": {
+      "valor": "4.7/5",
+      "tendencia": "Alta valoración en encuestas CSAT"
+    },
+    "facilidadUso": {
+      "valor": "92%",
+      "tendencia": "Usuarios completan tareas sin asistencia"
+    },
+    "rapidezSistema": {
+      "valor": "89%",
+      "tendencia": "Percepcion positiva de velocidad"
+    }
+  },
+  "series": {
+    "dias": ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"],
+    "tiempoAtencion": [4.8, 4.6, 4.4, 4.3, 4.2, 4.1, 4.0],
+    "tiempoRespuesta": [382, 361, 344, 332, 318, 306, 296],
+    "erroresRegistro": [4.1, 3.8, 3.2, 2.9, 2.4, 2.1, 1.9],
+    "usabilidad": {
+      "labels": ["Satisfacción", "Facilidad", "Rapidez"],
+      "valores": [94, 92, 89]
+    }
+  }
+}
