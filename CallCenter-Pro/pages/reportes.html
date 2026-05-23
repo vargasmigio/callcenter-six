@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes | CallCenter Six</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="app-body">
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="app-brand" href="dashboard.html" aria-label="CallCenter Six">
+        <span class="logo-mark small" aria-hidden="true"><span class="headset-band"></span><span class="headset-dot"></span></span>
+        <span>
+          <strong>CallCenter Six</strong>
+          <small>Atención Inteligente</small>
+        </span>
+      </a>
+
+      <nav class="side-nav">
+        <a href="dashboard.html"><span>DB</span>Dashboard</a>
+        <a href="tickets.html"><span>TK</span>Tickets</a>
+        <a href="simulacion.html"><span>SM</span>Simulación</a>
+        <a href="metricas.html"><span>MT</span>Métricas</a>
+        <a class="active" href="reportes.html"><span>RP</span>Reportes</a>
+        <a href="mejoras.html"><span>MJ</span>Mejoras</a>
+      </nav>
+
+      <div class="sidebar-card">
+        <span>Impacto general</span>
+        <strong id="reportImpactScore">--</strong>
+        <small>Resultado consolidado después de implementar el sistema.</small>
+      </div>
+      <div class="academic-block">
+        <strong>Universidad Autónoma del Perú</strong>
+        <span>Curso: Laboratorio Innova Tec</span>
+        <span>Grupo 6</span>
+      </div>
+    </aside>
+
+    <main class="dashboard-main reports-main">
+      <header class="dashboard-header">
+        <div>
+          <span class="page-kicker">Reporte ejecutivo</span>
+          <h1>Impacto del sistema</h1>
+          <p>Comparación antes vs después para demostrar mejoras en tiempo, errores, satisfacción y eficiencia operativa.</p>
+        </div>
+        <div class="header-actions">
+          <div class="user-chip">
+            <span>RP</span>
+            <div>
+              <strong id="currentUser">Supervisor</strong>
+              <small>Vista ejecutiva</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="report-hero panel">
+        <div>
+          <span class="page-kicker">Antes vs después</span>
+          <h2>El prototipo reduce fricción y acelera la atención.</h2>
+          <p id="reportSummary">Cargando impacto del sistema...</p>
+        </div>
+        <div class="impact-ring">
+          <strong id="reportHeroImpact">--</strong>
+          <span>Mejora promedio</span>
+        </div>
+      </section>
+
+      <section class="metrics-kpi-grid report-kpi-grid">
+        <article class="kpi-card">
+          <div class="kpi-top">
+            <span>Tiempo de respuesta</span>
+            <i>Core</i>
+          </div>
+          <strong id="reportResponseImpact">--</strong>
+          <small>Antes: 10s | Después: 2s</small>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-top">
+            <span>Errores</span>
+            <i>QA</i>
+          </div>
+          <strong id="reportErrorsImpact">--</strong>
+          <small>Antes: 12% | Después: 3%</small>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-top">
+            <span>Casos resueltos</span>
+            <i>SLA</i>
+          </div>
+          <strong id="reportResolutionImpact">--</strong>
+          <small>Incremento de resolución del equipo</small>
+        </article>
+      </section>
+
+      <nav class="subtabs" aria-label="Secciones de reportes">
+        <button class="active" type="button" data-report-tab="resultados">Resultados</button>
+        <button type="button" data-report-tab="grafico">Gráfico</button>
+        <button type="button" data-report-tab="porcentaje">Porcentaje</button>
+      </nav>
+
+      <section class="report-grid">
+        <article class="panel report-table-panel" data-report-section="resultados">
+          <div class="panel-header">
+            <div>
+              <span>Resultados comparativos</span>
+              <h2>Tabla de resultados</h2>
+            </div>
+          </div>
+          <div class="table-scroll">
+            <table class="tickets-table report-table">
+              <thead>
+                <tr>
+                  <th>Indicador</th>
+                  <th>Antes</th>
+                  <th>Después</th>
+                  <th>Impacto</th>
+                </tr>
+              </thead>
+              <tbody id="reportTableBody"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel metrics-chart-panel" data-report-section="grafico" hidden>
+          <div class="panel-header">
+            <div>
+              <span>Gráfico de mejora</span>
+              <h2>Antes vs después</h2>
+            </div>
+          </div>
+          <div class="chart-box">
+            <canvas id="beforeAfterChart"></canvas>
+          </div>
+        </article>
+
+        <article class="panel metrics-chart-panel wide" data-report-section="porcentaje" hidden>
+          <div class="panel-header">
+            <div>
+              <span>Porcentaje de mejora</span>
+              <h2>Impacto por indicador</h2>
+            </div>
+          </div>
+          <div class="chart-box">
+            <canvas id="improvementChart"></canvas>
+          </div>
+        </article>
+      </section>
+      <footer class="app-footer">Desarrollado por Grupo 6 – Universidad Autónoma del Perú</footer>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

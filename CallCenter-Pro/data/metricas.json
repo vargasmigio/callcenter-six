@@ -1,0 +1,67 @@
+{
+  "actualizado": "2026-05-23T03:55:00-05:00",
+  "calidad": 94,
+  "kpis": {
+    "ticketsHoy": {
+      "valor": 186,
+      "tendencia": "+12% frente al promedio diario"
+    },
+    "enProceso": {
+      "valor": 43,
+      "tendencia": "18 casos dentro del SLA crítico"
+    },
+    "resueltos": {
+      "valor": 129,
+      "tendencia": "91% resueltos en primer contacto"
+    },
+    "tiempoPromedio": {
+      "valor": "03:24",
+      "tendencia": "-36s frente a la semana anterior"
+    },
+    "satisfaccion": {
+      "valor": "4.8/5",
+      "tendencia": "+0.3 puntos en CSAT"
+    }
+  },
+  "ticketsPorDia": [
+    { "dia": "Lun", "tickets": 142 },
+    { "dia": "Mar", "tickets": 168 },
+    { "dia": "Mie", "tickets": 156 },
+    { "dia": "Jue", "tickets": 181 },
+    { "dia": "Vie", "tickets": 194 },
+    { "dia": "Sab", "tickets": 128 },
+    { "dia": "Dom", "tickets": 96 }
+  ],
+  "actividadReciente": [
+    {
+      "tipo": "Ticket escalado",
+      "detalle": "Caso #CC-1027 enviado al área de retención por riesgo de baja.",
+      "hora": "08:42",
+      "estado": "Prioridad alta"
+    },
+    {
+      "tipo": "Evaluación QA",
+      "detalle": "Agente Mariana Torres obtuvo 96% en protocolo de empatía.",
+      "hora": "08:31",
+      "estado": "Aprobado"
+    },
+    {
+      "tipo": "SLA recuperado",
+      "detalle": "Cola de soporte técnico bajó de 17 a 9 tickets pendientes.",
+      "hora": "08:18",
+      "estado": "En seguimiento"
+    },
+    {
+      "tipo": "Cliente satisfecho",
+      "detalle": "Encuesta CSAT recibida con calificación 5/5 para ticket #CC-1015.",
+      "hora": "08:06",
+      "estado": "Cerrado"
+    },
+    {
+      "tipo": "Nueva simulación",
+      "detalle": "Supervisor inició una prueba de usabilidad para flujo de reclamos.",
+      "hora": "07:54",
+      "estado": "Activo"
+    }
+  ]
+}

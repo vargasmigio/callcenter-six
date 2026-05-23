@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickets | CallCenter Six</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="app-brand" href="dashboard.html" aria-label="CallCenter Six">
+        <span class="logo-mark small" aria-hidden="true"><span class="headset-band"></span><span class="headset-dot"></span></span>
+        <span>
+          <strong>CallCenter Six</strong>
+          <small>Atención Inteligente</small>
+        </span>
+      </a>
+
+      <nav class="side-nav">
+        <a href="dashboard.html"><span>DB</span>Dashboard</a>
+        <a class="active" href="tickets.html"><span>TK</span>Tickets</a>
+        <a href="simulacion.html"><span>SM</span>Simulación</a>
+        <a href="metricas.html"><span>MT</span>Métricas</a>
+        <a href="reportes.html"><span>RP</span>Reportes</a>
+        <a href="mejoras.html"><span>MJ</span>Mejoras</a>
+      </nav>
+
+      <div class="sidebar-card">
+        <span>Tickets activos</span>
+        <strong id="ticketsActiveCount">--</strong>
+        <small>Casos abiertos y en proceso para seguimiento operativo.</small>
+      </div>
+      <div class="academic-block">
+        <strong>Universidad Autónoma del Perú</strong>
+        <span>Curso: Laboratorio Innova Tec</span>
+        <span>Grupo 6</span>
+      </div>
+    </aside>
+
+    <main class="dashboard-main tickets-main">
+      <header class="dashboard-header">
+        <div>
+          <span class="page-kicker">Gestión de atención · CallCenter Six</span>
+          <h1>Tickets</h1>
+          <p>Consulta, filtra y revisa casos de clientes para evaluar tiempos, prioridad y estado de resolución.</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost-button" type="button" id="clearTicketFilters">Limpiar filtros</button>
+          <div class="user-chip">
+            <span>SC</span>
+            <div>
+              <strong id="currentUser">Supervisor</strong>
+              <small>Módulo tickets</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="ticket-summary" aria-label="Resumen de tickets">
+        <article>
+          <span>Total</span>
+          <strong id="ticketTotal">--</strong>
+        </article>
+        <article>
+          <span>Alta prioridad</span>
+          <strong id="ticketHighPriority">--</strong>
+        </article>
+        <article>
+          <span>Resueltos</span>
+          <strong id="ticketResolved">--</strong>
+        </article>
+      </section>
+
+      <section class="panel ticket-workspace">
+        <div class="ticket-toolbar">
+          <label class="search-control" for="ticketSearch">
+            <span>Buscar cliente o ID</span>
+            <input id="ticketSearch" type="search" placeholder="Ej. CC-1042 o Ana Martinez">
+          </label>
+
+          <label for="statusFilter">
+            <span>Estado</span>
+            <select id="statusFilter">
+              <option value="todos">Todos</option>
+              <option value="Abierto">Abierto</option>
+              <option value="En proceso">En proceso</option>
+              <option value="Escalado">Escalado</option>
+              <option value="Resuelto">Resuelto</option>
+            </select>
+          </label>
+
+          <label for="priorityFilter">
+            <span>Prioridad</span>
+            <select id="priorityFilter">
+              <option value="todas">Todas</option>
+              <option value="Alta">Alta</option>
+              <option value="Media">Media</option>
+              <option value="Baja">Baja</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="ticket-content">
+          <div class="table-card">
+            <div class="table-header">
+              <div>
+                <span>Listado operativo</span>
+                <h2>Tickets registrados</h2>
+              </div>
+              <small id="ticketResultCount">-- resultados</small>
+            </div>
+
+            <div class="table-scroll">
+              <table class="tickets-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Asunto</th>
+                    <th>Estado</th>
+                    <th>Prioridad</th>
+                    <th>Fecha</th>
+                  </tr>
+                </thead>
+                <tbody id="ticketsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <aside class="ticket-detail" id="ticketDetail" aria-label="Detalle de ticket">
+            <span class="detail-kicker">Detalle del caso</span>
+            <h2>Selecciona un ticket</h2>
+            <p>Haz click en cualquier fila para revisar información del cliente, estado, prioridad y descripción del caso.</p>
+          </aside>
+        </div>
+      </section>
+      <footer class="app-footer">Desarrollado por Grupo 6 – Universidad Autónoma del Perú</footer>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
